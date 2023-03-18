@@ -1,0 +1,27 @@
+use crud;
+
+db.persons.insert({
+    firstName : "Frias",
+    secondName: "Martinez",
+    name: "Hugo",
+    birthday :  "21-03-2003"
+});
+
+db.createUser(
+    {
+        user: "mongoadmin",
+        pwd: "123456",
+        roles: [
+            {
+                role: "readWrite",
+                db: "crud"
+            }
+        ]
+    }
+);
+
+//Es importante sabes que mongo estamos ocupando, yo estoy ocupando "MongoDB Community Server"
+mongosh -u mongoadmin -p 123456 --authenticationDatabase crud
+
+// Si mongo es "MongoDB Enterprisey Server"
+mongo -u mongoadmin -p 123456 --authenticationDatabase crud
