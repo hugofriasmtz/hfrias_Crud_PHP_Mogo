@@ -25,5 +25,5 @@
     }
 
     $object = new connection();
-    // var_dump($object->connect());
+
 ?>
